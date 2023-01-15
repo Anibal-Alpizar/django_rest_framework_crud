@@ -1,5 +1,6 @@
-from models import Project
+from .models import Project
 from rest_framework import viewsets, permissions
+from .serializer import ProjectSerializer
 
 class ProjectViewSet(viewsets.ModelViewSet):
     queryset = Project.objects.all()
@@ -7,4 +8,3 @@ class ProjectViewSet(viewsets.ModelViewSet):
         permissions.AllowAny
     ]
     serializer_class = ProjectSerializer
-    
